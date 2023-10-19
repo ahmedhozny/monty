@@ -32,3 +32,21 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	fprintf(stdout, "%c\n", (*stack)->n);
 }
+
+/**
+ * pstr - prints the string starting at the top of the stack
+ *
+ * @stack: pointer to the stack
+ * @line_number: line number
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+
+	while (ptr)
+	{
+		if ((ptr)->n < 1 || (ptr)->n > 127)
+			return;
+		fprintf(stdout, "%c\n", ptr->n), ptr = ptr->next;
+	}
+}
