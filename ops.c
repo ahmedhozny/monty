@@ -72,3 +72,26 @@ void pop(stack_t **stack, unsigned int line_number)
 	*stack = cur;
 }
 
+/**
+ * swap - swaps the top two elements of the stack
+ *
+ * @stack: pointer to the stack
+ * @line_number: line number
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		print_err(0, "L%u: can't swap, stack too short", line_number);
+
+	ptr = (*stack)->next;
+	(*stack)->next = ptr->next;
+	(*stack)->prev = ptr;
+	ptr->next = (*stack);
+	ptr->prev = NULL;
+
+	if ((*stack)->next != NULL)
+		(*stack)->next->prev = (*stack);
+	*stack = ptr;
+}
