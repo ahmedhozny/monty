@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		if (temp == NULL || *temp == '\0')
 			break;
 		token = strtok(buffer, " \t\n");
-		if (token == NULL)
+		if (token == NULL || *token == '#')
 			continue;
 
 		if (exec(token) != 0)
