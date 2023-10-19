@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		token = strtok(buffer, " \t\n");
 		if (token == NULL)
 			continue;
-		for (i = 0; i < 5 && !flag; i++)
+		for (i = 0; i < 6 && !flag; i++)
 		{
 			if (!strcmp(session.instructions[i].opcode, token))
 				session.instructions[i].f(&session.stack, session.line_num), flag = 1;
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
  */
 void init_session(void)
 {
-	session.instructions = malloc(sizeof(instruction_t) * 5);
+	session.instructions = malloc(sizeof(instruction_t) * 6);
 	if (session.instructions == NULL)
 		malloc_err(0);
 	session.instructions[0].opcode = "push", session.instructions[0].f = push;
@@ -56,7 +56,7 @@ void init_session(void)
 	session.instructions[2].opcode = "pint", session.instructions[2].f = pint;
 	session.instructions[3].opcode = "pop", session.instructions[3].f = pop;
 	session.instructions[4].opcode = "swap", session.instructions[4].f = swap;
-
+	session.instructions[5].opcode = "add", session.instructions[5].f = add;
 }
 
 /**
