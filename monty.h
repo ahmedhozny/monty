@@ -42,21 +42,19 @@ typedef struct instruction_s
  * struct session_s - struct to store session-related data
  * @file: file pointer
  * @line_num: current line number
- * @instructions: array of all instructions
  * @stack: pointer to a stack data structure
  */
 typedef struct session_s
 {
 	FILE *file;
 	size_t line_num;
-	instruction_t *instructions;
 	stack_t *stack;
 
 } session_t;
 
 extern session_t session;
 
-void init_session(void);
+int exec(char *opcode);
 void cleanup(void);
 
 void print_err(int continues, char *format, ...);

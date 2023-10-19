@@ -31,7 +31,7 @@ void nop(stack_t **stack, unsigned int line_number)
 
 /**
  * sub - subtracts the top element of the stack
- * 		from the second top element of the stack
+ * from the second top element of the stack
  *
  * @stack: pointer to the stack
  * @line_number: line number
@@ -47,7 +47,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 /**
  * _div - divides the second top element of the stack
- * 		by the top element of the stack
+ * by the top element of the stack
  *
  * @stack: pointer to the stack
  * @line_number: line number
@@ -65,7 +65,7 @@ void _div(stack_t **stack, unsigned int line_number)
 
 /**
  * mul - multiplies the second top element of the stack
- * 		with the top element of the stack
+ * with the top element of the stack
  *
  * @stack: pointer to the stack
  * @line_number: line number
