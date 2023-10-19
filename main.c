@@ -55,6 +55,7 @@ int exec(char *opcode)
 			{"div", _div},
 			{"mul", mul},
 			{"mod", mod},
+			{"pchar", pchar},
 	};
 	unsigned int i;
 
